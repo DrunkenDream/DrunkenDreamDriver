@@ -1,4 +1,4 @@
-# DrunkenDreamDriver
+# DrunkenDreamDriver驱动描述
 禁止用于非法用途，违者必究  
 免责声明：使用者所做违规事项，均与开发者无关，将由违法者本人承担其所有法律责任  
 Q群：1036733613  
@@ -269,10 +269,10 @@ bool 写(uint64_t 地址, 类型 写入值)
         return CR3_写短整数(地址, 写入值, 极速_随机可用通讯方式());  
     return FALSE;  
 }  
-template<typename 类型>
-bool 写(uint64_t 地址, 类型 写入值, int 写入长度)
-{
-    if constexpr (is_same<类型, std::vector<BYTE>>::value)
-        return CR3_写字节数组(地址, 写入值, 写入长度, 极速_随机可用通讯方式());
-    return FALSE;
-}
+template<typename 类型>  
+bool 写(uint64_t 地址, 类型 写入值, int 写入长度)  
+{  
+    if constexpr (is_same<类型, std::vector<BYTE>>::value)  
+        return CR3_写字节数组(地址, 写入值, 写入长度, 极速_随机可用通讯方式());  
+    return FALSE;  
+}  
